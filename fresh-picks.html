@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Picks - YK FLORA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cart-styles.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <i class="fas fa-leaf"></i>
+            <span>YK Flora</span>
+        </div>
+        <div class="navbar-center">
+            <input type="text" id="nav-search" placeholder="Search flowers...">
+        </div>
+        <div class="navbar-right">
+            <button onclick="window.location.href='index.html'">Home</button>
+            <button onclick="window.location.href='flowers.html'">Flowers</button>
+            <button onclick="window.location.href='event-florals.html'"><i class="fas fa-calendar"></i> Event Florals</button>
+            <button onclick="window.location.href='fresh-picks.html'">Fresh Picks</button>
+            <button onclick="window.location.href='cart.html'"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span></button>
+            <button onclick="window.location.href='contact.html'"><i class="fas fa-envelope"></i> Contact</button>
+        </div>
+    </nav>
+    <section id="fresh-picks" class="flower-grid">
+        <h2>Fresh Picks</h2>
+        <div class="flowers-container">
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/1028980/pexels-photo-1028980.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tulips">
+                <h3>Tulips</h3>
+                <p>Vibrant spring blooms</p>
+                <span class="price">₹1,299</span>
+                <button onclick="cartFunctions.addToCart('Tulips', 1299)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/67857/daisy-flower-spring-marguerite-67857.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Daffodils">
+                <h3>Daffodils</h3>
+                <p>Cheerful yellow flowers</p>
+                <span class="price">₹1,099</span>
+                <button onclick="cartFunctions.addToCart('Daffodils', 1099)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/33044/sunflower-sun-summer-yellow.jpg?auto=compress&cs=tinysrgb&w=800" alt="Sweet Peas">
+                <h3>Sweet Peas</h3>
+                <p>Delicate and fragrant</p>
+                <span class="price">₹1,199</span>
+                <button onclick="cartFunctions.addToCart('Sweet Peas', 1199)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/459046/pexels-photo-459046.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lilac">
+                <h3>Lilac</h3>
+                <p>Purple clusters of beauty</p>
+                <span class="price">₹1,499</span>
+                <button onclick="cartFunctions.addToCart('Lilac', 1499)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/158465/waterlily-pink-water-lily-water-plant-158465.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Anemones">
+                <h3>Anemones</h3>
+                <p>Exotic and elegant</p>
+                <span class="price">₹1,399</span>
+                <button onclick="cartFunctions.addToCart('Anemones', 1399)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/1233442/pexels-photo-1233442.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Gerbera Daisies">
+                <h3>Gerbera Daisies</h3>
+                <p>Bright and colorful</p>
+                <span class="price">₹999</span>
+                <button onclick="cartFunctions.addToCart('Gerbera Daisies', 999)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cherry Blossoms">
+                <h3>Cherry Blossoms</h3>
+                <p>Symbol of renewal</p>
+                <span class="price">₹1,599</span>
+                <button onclick="cartFunctions.addToCart('Cherry Blossoms', 1599)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/5766885/pexels-photo-5766885.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lavender">
+                <h3>Lavender</h3>
+                <p>Calming purple hues</p>
+                <span class="price">₹1,249</span>
+                <button onclick="cartFunctions.addToCart('Lavender', 1249)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/1187079/pexels-photo-1187079.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Poppies">
+                <h3>Poppies</h3>
+                <p>Bold red petals</p>
+                <span class="price">₹1,349</span>
+                <button onclick="cartFunctions.addToCart('Poppies', 1349)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Magnolias">
+                <h3>Magnolias</h3>
+                <p>Large and fragrant</p>
+                <span class="price">₹1,799</span>
+                <button onclick="cartFunctions.addToCart('Magnolias', 1799)" class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div id="cart-total"></div>
+            <form id="order-form">
+                <h3>Delivery Details</h3>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <textarea placeholder="Delivery Address" required></textarea>
+                <input type="datetime-local" placeholder="Delivery Date & Time" required>
+                <textarea placeholder="Special Instructions (Optional)"></textarea>
+                <button type="submit" class="checkout-btn">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📞 1-800-FLOWERS</p>
+                <p>📧 info@bloomandblossom.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bloom & Blossom. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

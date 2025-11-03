@@ -1,0 +1,5 @@
+- [x] Link navbar.css in index.html head
+- [x] Update nav element to use class="navbar" and remove inline styles
+- [x] Fix ul/li with proper links and names (Home, Flowers, Event Florals, Fresh Picks, Cart, Contact)
+- [x] Update navbar.css for dark black background, white text
+- [x] Restructure nav: left - icon + 'YK Flora', center - search bar, right - buttons

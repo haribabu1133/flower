@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Florals - YK FLORA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cart-styles.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <i class="fas fa-leaf"></i>
+            <span>YK Flora</span>
+        </div>
+        <div class="navbar-center">
+            <input type="text" id="nav-search" placeholder="Search flowers...">
+        </div>
+        <div class="navbar-right">
+            <button onclick="window.location.href='index.html'">Home</button>
+            <button onclick="window.location.href='flowers.html'">Flowers</button>
+            <button onclick="window.location.href='event-florals.html'"><i class="fas fa-calendar"></i> Event Florals</button>
+            <button onclick="window.location.href='fresh-picks.html'">Fresh Picks</button>
+            <button onclick="window.location.href='cart.html'"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span></button>
+            <button onclick="window.location.href='contact.html'"><i class="fas fa-envelope"></i> Contact</button>
+        </div>
+    </nav>
+    <section class="flower-grid">
+        <h2>Event Florals</h2>
+        <div class="flowers-container">
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Rose">
+                <h3>Rose</h3>
+                <p>Classic and elegant</p>
+                <span class="price">₹1,499</span>
+                <button onclick="cartFunctions.addToCart('Rose', 1499)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/158465/waterlily-pink-water-lily-water-plant-158465.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lily">
+                <h3>Lily</h3>
+                <p>Pure and graceful</p>
+                <span class="price">₹1,399</span>
+                <button onclick="cartFunctions.addToCart('Lily', 1399)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/459046/pexels-photo-459046.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Orchid">
+                <h3>Orchid</h3>
+                <p>Exotic sophistication</p>
+                <span class="price">₹1,799</span>
+                <button onclick="cartFunctions.addToCart('Orchid', 1799)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/1233442/pexels-photo-1233442.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Peony">
+                <h3>Peony</h3>
+                <p>Luxurious blooms</p>
+                <span class="price">₹1,699</span>
+                <button onclick="cartFunctions.addToCart('Peony', 1699)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/5766885/pexels-photo-5766885.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hydrangea">
+                <h3>Hydrangea</h3>
+                <p>Voluminous clusters</p>
+                <span class="price">₹1,349</span>
+                <button onclick="cartFunctions.addToCart('Hydrangea', 1349)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Gardenia">
+                <h3>Gardenia</h3>
+                <p>Fragrant white flowers</p>
+                <span class="price">₹1,599</span>
+                <button onclick="cartFunctions.addToCart('Gardenia', 1599)" class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Bloom & Blossom</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cart-styles.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <i class="fas fa-leaf"></i>
+            <span>YK Flora</span>
+        </div>
+        <div class="navbar-center">
+            <input type="text" id="nav-search" placeholder="Search flowers...">
+        </div>
+        <div class="navbar-right">
+            <button onclick="window.location.href='index.html'">Home</button>
+            <button onclick="window.location.href='flowers.html'">Flowers</button>
+            <button onclick="window.location.href='event-florals.html'"><i class="fas fa-calendar"></i> Event Florals</button>
+            <button onclick="window.location.href='fresh-picks.html'">Fresh Picks</button>
+            <button onclick="window.location.href='cart.html'"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span></button>
+            <button onclick="window.location.href='contact.html'"><i class="fas fa-envelope"></i> Contact</button>
+        </div>
+    </nav>
+    <section class="cart-page" style="padding: 5rem 5% 3rem; margin-top: 80px;">
+        <h1>Your Shopping Cart</h1>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+        <form id="order-form">
+            <h3>Delivery Details</h3>
+            <input type="text" name="Full Name" placeholder="Full Name" required>
+            <input type="email" name="Email" placeholder="Email" required>
+            <input type="tel" name="Phone Number" placeholder="Phone Number" required>
+            <textarea name="Delivery Address" placeholder="Delivery Address" required></textarea>
+            <input type="datetime-local" name="Delivery Date & Time" placeholder="Delivery Date & Time" required>
+            <textarea name="Special Instructions" placeholder="Special Instructions (Optional)"></textarea>
+            <button type="submit" class="checkout-btn">Place Order</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📞 1-800-FLOWERS</p>
+                <p>📧 info@bloomandblossom.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bloom & Blossom. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

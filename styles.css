@@ -1,0 +1,684 @@
+:root {
+    --primary-color: #ff69b4;
+    --secondary-color: #4CAF50;
+    --text-color: #333;
+    --background-color: #fff;
+    --accent-color: #FFC0CB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #FFF8E1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+nav.hidden {
+    transform: translateY(-100%);
+}
+
+.logo h1 {
+    color: #000;
+    font-size: 1.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    order: 1;
+}
+.logo-icon {
+    font-size: 2.2rem;
+    margin-right: 0.2rem;
+}
+.logo-text {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.2rem;
+}
+.logo-text .yk {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #000;
+    letter-spacing: 1px;
+}
+.logo-text .flora {
+    font-family: 'Poppins', serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #3B3B3B;
+    letter-spacing: 2px;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 0.75rem;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+}
+
+.nav-items a:hover {
+    color: var(--primary-color);
+}
+
+.nav-items {
+    order: 3;
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.nav-search {
+    display: inline-block;
+    margin-left: 1rem;
+    order: 2;
+}
+.nav-search input {
+    padding: 0.45rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    min-width: 150px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .nav-items {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+        background: transparent;
+        padding: 0.5rem 0;
+    }
+
+    .nav-search {
+        display: block;
+        margin: 0.25rem 0;
+        padding: 0 1rem;
+    }
+
+    .nav-search input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .nav-items a {
+        margin: 0;
+        padding: 0.6rem 0.8rem;
+        color: var(--text-color);
+        border-radius: 6px;
+    }
+}
+
+/* Hero Section with Carousel */
+header {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.carousel-caption h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.carousel-caption p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #f0f0f0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #F7C948;
+    color: #2E2E2E;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 1rem;
+    transition: transform 0.18s ease, background-color 0.18s ease;
+    border: 1px solid transparent;
+}
+
+.cta-button:hover {
+    transform: scale(1.03);
+    background-color: #E6B220;
+    border-color: #E6B220;
+}
+
+/* Flower Grid */
+.flower-grid {
+    padding: 5rem 5%;
+    background-color: #f9f9f9;
+}
+
+.flower-grid h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.flowers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+    max-width: none;
+    margin: 0;
+}
+
+.flower-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    position: relative;
+    border: 1px solid #f0f0f0;
+    padding: 14px; /* inner spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    margin: 0; /* spacing handled by grid gap */
+}
+
+.flower-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(255,105,180,0.2);
+}
+
+.flower-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    padding: 2px;
+    background: linear-gradient(45deg, #ff69b4, #4CAF50);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Make the gradient border decorative only (don't block clicks)
+   and ensure card content is stacked above the ::before element. */
+.flower-card::before {
+    pointer-events: none;
+    z-index: 0;
+}
+
+.flower-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.flower-card:hover::before {
+    opacity: 1;
+}
+
+.flower-card img {
+    width: 200px;
+    height: 200px; /* square images for consistent size */
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 0 0 12px 0;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    border: 1px solid #f7f7f7;
+}
+
+.flower-card:hover img {
+    transform: scale(1.05);
+}
+
+.flower-card h3, .flower-card p, .flower-card .price {
+    padding: 0.5rem 1rem;
+}
+
+.flower-card .price {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #45a049;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1001;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Form Styles */
+#order-form {
+    margin-top: 2rem;
+}
+
+#order-form input,
+#order-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.checkout-btn:hover {
+    background-color: #ff4d94;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 3rem 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.social-links a {
+    color: white;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Contact Page Styles */
+.contact-page {
+    padding: 5rem 5% 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-info {
+    background: #f9f9f9;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.contact-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 0.2rem;
+}
+
+.info-item strong {
+    display: block;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.info-item p {
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.social-links h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #ff4d94;
+    transform: translateY(-2px);
+}
+
+.contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+}
+
+.contact-form h3 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.cta-button {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color), #ff4d94);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-items {
+        margin-top: 1rem;
+    }
+
+    .nav-items a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Tablet: 2 columns */
+    .flowers-container {
+        grid-template-columns: repeat(2, minmax(160px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* On very wide screens, keep 3 columns but allow a larger max width */
+    .flowers-container {
+        max-width: 1400px;
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 420px) {
+    /* Mobile: single column with comfortable spacing */
+    .flowers-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .flower-card img {
+        height: 180px;
+    }
+
+    .contact-page {
+        padding: 3rem 5% 2rem;
+    }
+
+    .contact-hero h1 {
+        font-size: 2rem;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .info-item {
+        margin-bottom: 1.5rem;
+    }
+}
