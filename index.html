@@ -19,12 +19,25 @@
         <div class="navbar-center">
             <input type="text" id="nav-search" placeholder="Search flowers...">
         </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="navbar-right">
             <button onclick="window.location.href='index.html'">Home</button>
             <button onclick="window.location.href='flowers.html'">Flowers</button>
             <button onclick="window.location.href='event-florals.html'"><i class="fas fa-calendar"></i> Event Florals</button>
             <button onclick="window.location.href='fresh-picks.html'">Fresh Picks</button>
             <button onclick="window.location.href='cart.html'"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span></button>
+            <button onclick="window.location.href='contact.html'"><i class="fas fa-envelope"></i> Contact</button>
+        </div>
+        <div class="navbar-right mobile-menu">
+            <button onclick="window.location.href='index.html'">Home</button>
+            <button onclick="window.location.href='flowers.html'">Flowers</button>
+            <button onclick="window.location.href='event-florals.html'"><i class="fas fa-calendar"></i> Event Florals</button>
+            <button onclick="window.location.href='fresh-picks.html'">Fresh Picks</button>
+            <button onclick="window.location.href='cart.html'"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count-mobile">0</span></button>
             <button onclick="window.location.href='contact.html'"><i class="fas fa-envelope"></i> Contact</button>
         </div>
     </nav>

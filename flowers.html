@@ -19,12 +19,25 @@
         <div class="navbar-center">
             <input type="text" id="nav-search" placeholder="Search flowers...">
         </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="navbar-right">
             <button onclick="window.location.href='index.html'">Home</button>
             <button onclick="window.location.href='flowers.html'">Flowers</button>
             <button onclick="window.location.href='event-florals.html'"><i class="fas fa-calendar"></i> Event Florals</button>
             <button onclick="window.location.href='fresh-picks.html'">Fresh Picks</button>
             <button onclick="window.location.href='cart.html'"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span></button>
+            <button onclick="window.location.href='contact.html'"><i class="fas fa-envelope"></i> Contact</button>
+        </div>
+        <div class="navbar-right mobile-menu">
+            <button onclick="window.location.href='index.html'">Home</button>
+            <button onclick="window.location.href='flowers.html'">Flowers</button>
+            <button onclick="window.location.href='event-florals.html'"><i class="fas fa-calendar"></i> Event Florals</button>
+            <button onclick="window.location.href='fresh-picks.html'">Fresh Picks</button>
+            <button onclick="window.location.href='cart.html'"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count-mobile">0</span></button>
             <button onclick="window.location.href='contact.html'"><i class="fas fa-envelope"></i> Contact</button>
         </div>
     </nav>
@@ -94,6 +107,132 @@
                 <p>Long-lasting beauty</p>
                 <span class="price">₹1,199</span>
                 <button onclick="cartFunctions.addToCart('Red Carnations', 1199)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Pink Roses">
+                <h3>Pink Roses</h3>
+                <p>Gentle and elegant blooms</p>
+                <span class="price">₹1,399</span>
+                <button onclick="cartFunctions.addToCart('Pink Roses', 1399)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/1028980/pexels-photo-1028980.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Yellow Tulips">
+                <h3>Yellow Tulips</h3>
+                <p>Bright and cheerful spring flowers</p>
+                <span class="price">₹1,249</span>
+                <button onclick="cartFunctions.addToCart('Yellow Tulips', 1249)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/33044/sunflower-sun-summer-yellow.jpg?auto=compress&cs=tinysrgb&w=400" alt="Mini Sunflowers">
+                <h3>Mini Sunflowers</h3>
+                <p>Compact and adorable blooms</p>
+                <span class="price">₹849</span>
+                <button onclick="cartFunctions.addToCart('Mini Sunflowers', 849)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/459046/pexels-photo-459046.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Purple Orchids">
+                <h3>Purple Orchids</h3>
+                <p>Mysterious and exotic beauty</p>
+                <span class="price">₹1,649</span>
+                <button onclick="cartFunctions.addToCart('Purple Orchids', 1649)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/158465/waterlily-pink-water-lily-water-plant-158465.jpeg?auto=compress&cs=tinysrgb&w=400" alt="White Lilies">
+                <h3>White Lilies</h3>
+                <p>Pure and serene elegance</p>
+                <span class="price">₹1,299</span>
+                <button onclick="cartFunctions.addToCart('White Lilies', 1299)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/1233442/pexels-photo-1233442.jpeg?auto=compress&cs=tinysrgb&w=400" alt="White Peonies">
+                <h3>White Peonies</h3>
+                <p>Timeless and graceful</p>
+                <span class="price">₹1,549</span>
+                <button onclick="cartFunctions.addToCart('White Peonies', 1549)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/67857/daisy-flower-spring-marguerite-67857.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Gerbera Daisies">
+                <h3>Gerbera Daisies</h3>
+                <p>Vibrant and colorful variety</p>
+                <span class="price">₹949</span>
+                <button onclick="cartFunctions.addToCart('Gerbera Daisies', 949)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/5766885/pexels-photo-5766885.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Pink Hydrangeas">
+                <h3>Pink Hydrangeas</h3>
+                <p>Romantic and voluminous</p>
+                <span class="price">₹1,449</span>
+                <button onclick="cartFunctions.addToCart('Pink Hydrangeas', 1449)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/1187079/pexels-photo-1187079.jpeg?auto=compress&cs=tinysrgb&w=400" alt="White Carnations">
+                <h3>White Carnations</h3>
+                <p>Simple and pure beauty</p>
+                <span class="price">₹1,099</span>
+                <button onclick="cartFunctions.addToCart('White Carnations', 1099)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Yellow Roses">
+                <h3>Yellow Roses</h3>
+                <p>Symbol of friendship and joy</p>
+                <span class="price">₹1,349</span>
+                <button onclick="cartFunctions.addToCart('Yellow Roses', 1349)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/1028980/pexels-photo-1028980.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Purple Tulips">
+                <h3>Purple Tulips</h3>
+                <p>Royal and majestic blooms</p>
+                <span class="price">₹1,349</span>
+                <button onclick="cartFunctions.addToCart('Purple Tulips', 1349)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/33044/sunflower-sun-summer-yellow.jpg?auto=compress&cs=tinysrgb&w=400" alt="Giant Sunflowers">
+                <h3>Giant Sunflowers</h3>
+                <p>Towering and impressive</p>
+                <span class="price">₹1,149</span>
+                <button onclick="cartFunctions.addToCart('Giant Sunflowers', 1149)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/459046/pexels-photo-459046.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Yellow Orchids">
+                <h3>Yellow Orchids</h3>
+                <p>Bright and exotic elegance</p>
+                <span class="price">₹1,749</span>
+                <button onclick="cartFunctions.addToCart('Yellow Orchids', 1749)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/158465/waterlily-pink-water-lily-water-plant-158465.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Orange Lilies">
+                <h3>Orange Lilies</h3>
+                <p>Energetic and passionate</p>
+                <span class="price">₹1,449</span>
+                <button onclick="cartFunctions.addToCart('Orange Lilies', 1449)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/1233442/pexels-photo-1233442.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Red Peonies">
+                <h3>Red Peonies</h3>
+                <p>Bold and dramatic beauty</p>
+                <span class="price">₹1,649</span>
+                <button onclick="cartFunctions.addToCart('Red Peonies', 1649)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/67857/daisy-flower-spring-marguerite-67857.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Blue Daisies">
+                <h3>Blue Daisies</h3>
+                <p>Rare and unique charm</p>
+                <span class="price">₹999</span>
+                <button onclick="cartFunctions.addToCart('Blue Daisies', 999)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/5766885/pexels-photo-5766885.jpeg?auto=compress&cs=tinysrgb&w=400" alt="White Hydrangeas">
+                <h3>White Hydrangeas</h3>
+                <p>Clean and sophisticated</p>
+                <span class="price">₹1,399</span>
+                <button onclick="cartFunctions.addToCart('White Hydrangeas', 1399)" class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="flower-card">
+                <img src="https://images.pexels.com/photos/1187079/pexels-photo-1187079.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Pink Carnations">
+                <h3>Pink Carnations</h3>
+                <p>Soft and feminine appeal</p>
+                <span class="price">₹1,149</span>
+                <button onclick="cartFunctions.addToCart('Pink Carnations', 1149)" class="add-to-cart">Add to Cart</button>
             </div>
         </div>
     </section>

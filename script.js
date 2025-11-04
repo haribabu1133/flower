@@ -1,3 +1,21 @@
+// Hamburger menu toggle
+function toggleMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (hamburger && mobileMenu) {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    }
+}
+
+// Update mobile cart count
+function updateMobileCartCount() {
+    const cartCountMobile = document.getElementById('cart-count-mobile');
+    if (cartCountMobile) {
+        cartCountMobile.textContent = cartState.items.length.toString();
+    }
+}
+
 // Cart state management with localStorage persistence
 const cartState = {
     items: JSON.parse(localStorage.getItem('cartItems')) || [],
@@ -263,6 +281,31 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Hamburger menu toggle
+    function toggleMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (hamburger && mobileMenu) {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        }
+    }
+
+    // Update mobile cart count
+    function updateMobileCartCount() {
+        const cartCountMobile = document.getElementById('cart-count-mobile');
+        if (cartCountMobile) {
+            cartCountMobile.textContent = cartState.items.length.toString();
+        }
+    }
+
+    // Call updateMobileCartCount when cart changes
+    const originalUpdateCartCount = cartFunctions.updateCartCount;
+    cartFunctions.updateCartCount = function() {
+        originalUpdateCartCount.call(this);
+        updateMobileCartCount();
+    };
 
     // Navbar hide/show on scroll
     let lastScrollTop = 0;

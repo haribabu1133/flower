@@ -644,6 +644,20 @@ footer {
     .contact-form {
         padding: 2rem;
     }
+
+    /* Carousel responsiveness */
+    .carousel-caption h1 {
+        font-size: 2.5rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -680,5 +694,24 @@ footer {
 
     .info-item {
         margin-bottom: 1.5rem;
+    }
+
+    /* Carousel on mobile */
+    .carousel-caption {
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
     }
 }

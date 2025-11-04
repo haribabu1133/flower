@@ -1,5 +1,6 @@
-- [x] Link navbar.css in index.html head
-- [x] Update nav element to use class="navbar" and remove inline styles
-- [x] Fix ul/li with proper links and names (Home, Flowers, Event Florals, Fresh Picks, Cart, Contact)
-- [x] Update navbar.css for dark black background, white text
-- [x] Restructure nav: left - icon + 'YK Flora', center - search bar, right - buttons
+- [x] Add hamburger menu for mobile navbar in navbar.css
+- [x] Update navbar HTML to include hamburger toggle
+- [ ] Optimize images for mobile by reducing size in URLs
+- [x] Improve mobile responsiveness in styles.css (carousel, flower cards, etc.)
+- [x] Ensure neat layout on mobile devices
+- [x] Test responsiveness
