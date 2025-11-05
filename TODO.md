@@ -1,6 +1,4 @@
-- [x] Add hamburger menu for mobile navbar in navbar.css
-- [x] Update navbar HTML to include hamburger toggle
-- [ ] Optimize images for mobile by reducing size in URLs
-- [x] Improve mobile responsiveness in styles.css (carousel, flower cards, etc.)
-- [x] Ensure neat layout on mobile devices
-- [x] Test responsiveness
+- [ ] Add Google APIs JavaScript client library script to index.html
+- [ ] Add Google Drive API initialization and authentication functions in script.js
+- [ ] Modify handleOrderSubmit to upload order data as JSON file to Google Drive
+- [ ] Test the integration (requires user to provide API credentials)

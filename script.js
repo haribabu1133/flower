@@ -16,10 +16,61 @@ function updateMobileCartCount() {
     }
 }
 
+// Google Drive API configuration
+const CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID'; // Replace with your actual client ID from Google Cloud Console
+const API_KEY = 'YOUR_GOOGLE_API_KEY'; // Replace with your actual API key from Google Cloud Console
+const DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'];
+const SCOPES = 'https://www.googleapis.com/auth/drive.file';
+
 // Cart state management with localStorage persistence
 const cartState = {
     items: JSON.parse(localStorage.getItem('cartItems')) || [],
     total: parseInt(localStorage.getItem('cartTotal')) || 0
+};
+
+// Google Drive functions
+const driveFunctions = {
+    // Initialize Google API
+    initGoogleAPI: function() {
+        gapi.load('client:auth2', () => {
+            gapi.client.init({
+                apiKey: API_KEY,
+                clientId: CLIENT_ID,
+                discoveryDocs: DISCOVERY_DOCS,
+                scope: SCOPES
+            }).then(() => {
+                console.log('Google API initialized');
+            }).catch(error => {
+                console.error('Error initializing Google API:', error);
+            });
+        });
+    },
+
+    // Sign in to Google
+    signIn: function() {
+        return gapi.auth2.getAuthInstance().signIn();
+    },
+
+    // Upload file to Google Drive
+    uploadToDrive: function(fileName, content) {
+        const file = new Blob([content], { type: 'application/json' });
+        const metadata = {
+            name: fileName,
+            mimeType: 'application/json'
+        };
+
+        const form = new FormData();
+        form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
+        form.append('file', file);
+
+        return gapi.client.drive.files.create({
+            resource: metadata,
+            media: {
+                mimeType: 'application/json',
+                body: file
+            }
+        });
+    }
 };
 
 // All cart functions
@@ -149,7 +200,7 @@ const cartFunctions = {
     },
 
     // Handle order submission
-    handleOrderSubmit: function(e) {
+    handleOrderSubmit: async function(e) {
         e.preventDefault();
 
         if (cartState.items.length === 0) {
@@ -164,7 +215,8 @@ const cartFunctions = {
             phone: formData.get('Phone Number'),
             address: formData.get('Delivery Address'),
             items: cartState.items,
-            total: cartState.total
+            total: cartState.total,
+            orderDate: new Date().toISOString()
         };
 
         // Validate form fields
@@ -173,18 +225,33 @@ const cartFunctions = {
             return;
         }
 
-        console.log('Order submitted:', orderDetails);
+        try {
+            // Check if user is signed in
+            const authInstance = gapi.auth2.getAuthInstance();
+            if (!authInstance.isSignedIn.get()) {
+                await driveFunctions.signIn();
+            }
 
-        // Clear cart and form
-        cartState.items = [];
-        cartState.total = 0;
-        this.saveCartToStorage();
-        this.updateCartCount();
-        this.updateCartDisplay();
-        e.target.reset();
-        this.closeCart();
+            // Upload order to Google Drive
+            const fileName = `order_${orderDetails.customerName.replace(/\s+/g, '_')}_${Date.now()}.json`;
+            await driveFunctions.uploadToDrive(fileName, JSON.stringify(orderDetails, null, 2));
 
-        this.showNotification('Order placed successfully! We will contact you soon.', 'success');
+            console.log('Order submitted and uploaded to Google Drive:', orderDetails);
+
+            // Clear cart and form
+            cartState.items = [];
+            cartState.total = 0;
+            this.saveCartToStorage();
+            this.updateCartCount();
+            this.updateCartDisplay();
+            e.target.reset();
+            this.closeCart();
+
+            this.showNotification('Order placed successfully and saved to Google Drive!', 'success');
+        } catch (error) {
+            console.error('Error uploading order to Google Drive:', error);
+            this.showNotification('Order placed but failed to save to Google Drive. Please try again.', 'error');
+        }
     },
 
     // Save cart to localStorage
@@ -391,6 +458,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (slides.length > 0) {
         showSlide(0);
     }
+
+    // Initialize Google API
+    driveFunctions.initGoogleAPI();
 });
 
 // Add animation & cart styles once (single declaration)
